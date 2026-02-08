@@ -1,0 +1,477 @@
+.valentine-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1.5rem 5rem;
+  text-align: center;
+  gap: 3rem;
+}
+
+/* Floating hearts */
+.hearts-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.heart {
+  position: absolute;
+  font-size: 1.5rem;
+  opacity: 0.12;
+  color: var(--rose-deep);
+  animation: float 8s ease-in-out infinite;
+}
+
+.heart-1 { left: 10%; top: 20%; animation-delay: 0s; }
+.heart-2 { right: 15%; top: 30%; animation-delay: 1.5s; }
+.heart-3 { left: 25%; bottom: 25%; animation-delay: 3s; }
+.heart-4 { right: 20%; bottom: 15%; animation-delay: 4.5s; }
+.heart-5 { left: 50%; top: 15%; animation-delay: 2s; font-size: 1rem; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+/* Hero */
+.hero {
+  max-width: 32rem;
+}
+
+.tagline {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--dusty-pink);
+  letter-spacing: 0.15em;
+  text-transform: lowercase;
+  margin-bottom: 0.75rem;
+}
+
+.title {
+  font-size: clamp(2.25rem, 6vw, 3.5rem);
+  line-height: 1.2;
+  color: var(--text-deep);
+  margin-bottom: 1rem;
+}
+
+.title-line {
+  display: block;
+}
+
+.title-line.accent {
+  color: var(--rose-deep);
+  font-style: italic;
+}
+
+.subtitle {
+  color: var(--text-soft);
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  font-weight: 500;
+}
+
+.cta {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.85rem 1.75rem;
+  border: 2px solid var(--rose-deep);
+  background: transparent;
+  color: var(--rose-deep);
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.05em;
+}
+
+.cta:hover {
+  background: var(--rose-deep);
+  color: var(--cream);
+  transform: scale(1.02);
+}
+
+/* Note modal */
+.note-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  z-index: 100;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.note-modal {
+  background: var(--cream);
+  border: 2px solid var(--rose-deep);
+  border-radius: 1rem;
+  padding: 2rem;
+  max-width: 28rem;
+  width: 100%;
+  position: relative;
+  box-shadow: 0 20px 40px rgba(184, 59, 94, 0.15);
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.note-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--dusty-pink);
+  cursor: pointer;
+  line-height: 1;
+  padding: 0.25rem;
+  transition: color 0.2s;
+}
+
+.note-close:hover {
+  color: var(--rose-deep);
+}
+
+.note-content h2 {
+  font-family: 'Cormorant Garamond', serif;
+  color: var(--rose-deep);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.note-content p {
+  color: var(--text-deep);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.note-signature {
+  font-style: italic;
+  color: var(--dusty-pink);
+  margin-bottom: 0 !important;
+}
+
+/* Sections */
+.section {
+  width: 100%;
+  max-width: 32rem;
+}
+
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  color: var(--rose-deep);
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.section-sub {
+  font-size: 0.9rem;
+  color: var(--dusty-pink);
+  margin-bottom: 1.25rem;
+}
+
+/* For you – her photo */
+.for-you .photo-frame {
+  border: 3px solid var(--rose-deep);
+  border-radius: 1rem;
+  padding: 0.5rem;
+  background: var(--blush);
+  margin-bottom: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(184, 59, 94, 0.12);
+}
+
+.her-photo {
+  max-width: min(100%, 560px);
+  width: auto;
+  height: auto;
+  display: block;
+  border-radius: 0.5rem;
+  margin: 0 auto;
+}
+
+.her-photo-iframe {
+  width: 100%;
+  min-width: 280px;
+  max-width: 560px;
+  height: 420px;
+  border: none;
+  border-radius: 0.5rem;
+}
+
+.photo-caption {
+  font-style: italic;
+  color: var(--dusty-pink);
+  font-size: 1rem;
+}
+
+/* Love questions */
+.questions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.question-item {
+  background: var(--blush);
+  border: 2px solid var(--rose-soft);
+  border-radius: 0.75rem;
+  padding: 1rem 1.25rem;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.question-item:hover {
+  border-color: var(--rose-deep);
+  background: rgba(248, 232, 232, 0.9);
+}
+
+.question-q {
+  font-weight: 600;
+  color: var(--text-deep);
+  font-size: 0.95rem;
+}
+
+.question-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+  color: var(--text-soft);
+  font-size: 0.9rem;
+  margin-top: 0;
+  line-height: 1.5;
+}
+
+.question-item.open .question-a {
+  max-height: 8rem;
+  margin-top: 0.5rem;
+}
+
+.question-item.has-options .question-q {
+  cursor: pointer;
+}
+
+.question-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.question-opt-btn {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--rose-deep);
+  background: var(--cream);
+  color: var(--rose-deep);
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.question-opt-btn:hover {
+  background: var(--rose-deep);
+  color: var(--cream);
+  transform: scale(1.03);
+}
+
+/* Runaway "No" button + love note */
+.no-btn-wrapper {
+  position: relative;
+  min-width: 5rem;
+  min-height: 2.5rem;
+  flex-shrink: 0;
+}
+
+.question-opt-no {
+  transition: left 0.15s ease-out, top 0.15s ease-out;
+  margin: 0;
+}
+
+.no-love-note {
+  width: 100%;
+  flex-basis: 100%;
+  font-size: 0.95rem;
+  color: var(--rose-deep);
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+  font-style: italic;
+}
+
+/* Games */
+.games {
+  max-width: 22rem;
+}
+
+.game-block {
+  background: var(--blush);
+  border: 2px solid var(--rose-soft);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.game-title {
+  font-family: 'Cormorant Garamond', serif;
+  color: var(--rose-deep);
+  font-size: 1.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.game-desc {
+  font-size: 0.85rem;
+  color: var(--text-soft);
+  margin-bottom: 1rem;
+}
+
+.game-won {
+  color: var(--rose-deep);
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+/* Memory game */
+.memory-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+  perspective: 600px;
+}
+
+.memory-card {
+  aspect-ratio: 1;
+  border: 2px solid var(--rose-deep);
+  border-radius: 0.5rem;
+  background: var(--cream);
+  cursor: pointer;
+  position: relative;
+  font-size: 1.5rem;
+  transition: transform 0.2s;
+  transform-style: preserve-3d;
+}
+
+.memory-card:hover:not(.flipped) {
+  transform: scale(1.05);
+}
+
+.memory-card.flipped {
+  transform: rotateY(180deg);
+  pointer-events: none;
+}
+
+.memory-card .memory-back,
+.memory-card .memory-front {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backface-visibility: hidden;
+  border-radius: inherit;
+}
+
+.memory-card .memory-back {
+  color: var(--dusty-pink);
+  font-weight: 700;
+  background: var(--blush);
+}
+
+.memory-card .memory-front {
+  transform: rotateY(180deg);
+  color: var(--rose-deep);
+  background: var(--cream);
+  overflow: hidden;
+}
+
+.memory-card .memory-front img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: inherit;
+}
+
+.memory-card .memory-front .memory-card-placeholder {
+  font-size: 2.5rem;
+  color: var(--rose-deep);
+  opacity: 0.8;
+}
+
+/* Pick favorite moment */
+.moments-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+}
+
+.moment-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  border: 2px solid var(--rose-soft);
+  border-radius: 0.75rem;
+  background: var(--cream);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-size: 0.8rem;
+  color: var(--text-deep);
+  font-weight: 500;
+}
+
+.moment-card:hover {
+  border-color: var(--rose-deep);
+  transform: translateY(-2px);
+}
+
+.moment-card.picked {
+  border-color: var(--rose-deep);
+  box-shadow: 0 0 0 2px var(--blush);
+}
+
+.moment-card img {
+  width: 100%;
+  aspect-ratio: 200/160;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+.moment-response {
+  margin-top: 1rem;
+  color: var(--rose-deep);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.footer {
+  position: absolute;
+  bottom: 1.5rem;
+  font-size: 0.85rem;
+  color: var(--dusty-pink);
+}

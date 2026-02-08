@@ -1,0 +1,50 @@
+:root {
+  /* Valentine palette – warm & romantic */
+  --rose-deep: #b83b5e;
+  --rose-soft: #d4a5a5;
+  --blush: #f8e8e8;
+  --cream: #fdf6f0;
+  --dusty-pink: #c9a9a6;
+  --wine: #722f37;
+  --gold: #c9a227;
+  --text-soft: #5c4a4a;
+  --text-deep: #3d2c2c;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  background: var(--cream);
+  color: var(--text-deep);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Subtle heart/dot pattern background */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: 
+    radial-gradient(circle at 20% 30%, var(--blush) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, var(--rose-soft) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(248, 232, 232, 0.5) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+#root {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+}
+
+h1, h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+}
